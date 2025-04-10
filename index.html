@@ -18,7 +18,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-    <title>Sky Legal 4</title>
+    <title>Sky Legal</title>
     <meta name="robots" content="max-image-preview:large" />
     <style>
       img:is([sizes="auto" i], [sizes^="auto," i]) {
@@ -32,13 +32,15 @@
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Sky Legal 4 &raquo; Feed"
+      title="Sky Legal Corporate
+Consultants Private Limited  &raquo; Feed"
       href="feed/index.html"
     />
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Sky Legal 4 &raquo; Comments Feed"
+      title="Sky Legal Corporate
+Consultants Private Limited  &raquo; Comments Feed"
       href="comments/feed/index.html"
     />
     <style id="classic-theme-styles-inline-css">
@@ -809,7 +811,8 @@
     />
     <meta
       name="description"
-      content="New Sky Legal 4: SEO optimized, easy to customize, responsive, and ideal for shops, blogs, businesses, portfolios, and online stores."
+      content="New Sky Legal Corporate
+Consultants Private Limited 4: SEO optimized, easy to customize, responsive, and ideal for shops, blogs, businesses, portfolios, and online stores."
     />
     <meta
       name="keywords"
@@ -817,7 +820,8 @@
     />
     <meta
       property="og:description"
-      content="New Sky Legal 4: SEO optimized, easy to customize, responsive, and ideal for shops, blogs, businesses, portfolios, and online stores."
+      content="New Sky Legal Corporate
+Consultants Private Limited 4: SEO optimized, easy to customize, responsive, and ideal for shops, blogs, businesses, portfolios, and online stores."
     />
     <meta property="og:type" content="website" />
     <style>
@@ -2873,7 +2877,313 @@
     id="intro"
     class="home page-template-default page page-id-4 wp-embed-responsive theme-thelaw cz-cpt-post xtra-woo-two-col-mobile cz-outofstock-grayscale woo-sale-percentage theme-4.9.15 codevz-plus-4.9.15 clr cz-page-4 woocommerce-no-js elementor-default elementor-kit-3 elementor-page elementor-page-4"
     data-ajax="https://themetor.com/elementor/thelaw-4/wp-admin/admin-ajax.php"
-  >
+  ><!-- Disclaimer Popup -->
+<!-- Disclaimer Popup -->
+<div id="disclaimer-popup" class="disclaimer-overlay">
+  <div class="disclaimer-container">
+    <h2>Disclaimer</h2>
+    <p>The content of this website (www.skylegalcc.com) is for informational purposes only and should not be interpreted as soliciting or advertisement. No material/information provided on this website should be construed as legal advice. This website is not an attempt to advertise or solicit clients, and does not seek to create or invite any lawyer-client relationship.</p>
+    
+    <p>Careful attention has been given to ensure that the information provided herein is accurate and up-to-date. However, Sky Legal Corporate Consultants Private Limited is not responsible for any reliance that a reader places on such information and shall not be liable for any loss or damage caused due to any inaccuracy in or exclusion of any information, or its interpretation thereof. Reader is advised to confirm the veracity of the same from independent and expert sources.</p>
+    
+    <p>This website uses cookies on its website to improve its usability. This helps us in providing a good user experience and to also help in improving our website. By continuing to use our website without changing your privacy settings first, you agree to use our cookies.</p>
+    
+    <p>You can visit the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+    
+    <div class="disclaimer-buttons">
+      <button id="decline-btn">I Decline</button>
+      <button id="consent-btn">I Consent</button>
+    </div>
+  </div>  
+</div>
+
+<style>
+  .disclaimer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+  }
+
+  .disclaimer-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .disclaimer-container h2 {
+    color: #0033a0;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .disclaimer-container p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  .disclaimer-container a {
+    color: #0033a0;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .disclaimer-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+
+  .disclaimer-buttons button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  #decline-btn {
+    background-color: #e6e6e6;
+    color: #333;
+  }
+
+  #consent-btn {
+    background-color: #f2f2f2;
+    color: #333;
+    float: right;
+  }
+
+  #decline-btn:hover {
+    background-color: #d9d9d9;
+  }
+
+  #consent-btn:hover {
+    background-color: #e6e6e6;
+  }
+
+  @media (max-width: 600px) {
+    .disclaimer-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .disclaimer-buttons button {
+      width: 100%;
+    }
+  }
+
+  .hidden {
+    display: none !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const EXPIRY_TIME = 30 * 60 * 1000; // 30 minutes in milliseconds
+  const disclaimerPopup = document.getElementById('disclaimer-popup');
+  
+  // Check if the disclaimer should be shown
+  function shouldShowDisclaimer() {
+    // Get current time
+    const now = new Date().getTime();
+    
+    // Check if we have a stored timestamp
+    const storedTimestamp = localStorage.getItem('disclaimerTimestamp');
+    const storedConsent = localStorage.getItem('disclaimerConsent');
+    
+    // If we have both timestamp and consent status
+    if (storedTimestamp && storedConsent) {
+      // Check if the consent is still valid (within 30 minutes)
+      if (now - parseInt(storedTimestamp) < EXPIRY_TIME) {
+        // Also update session storage for current browser session
+        sessionStorage.setItem('disclaimerConsent', storedConsent);
+        sessionStorage.setItem('disclaimerTimestamp', storedTimestamp);
+        return false; // Don't show the popup
+      }
+    }
+    
+    // Check session storage as fallback
+    const sessionConsent = sessionStorage.getItem('disclaimerConsent');
+    const sessionTimestamp = sessionStorage.getItem('disclaimerTimestamp');
+    
+    if (sessionConsent && sessionTimestamp) {
+      if (now - parseInt(sessionTimestamp) < EXPIRY_TIME) {
+        // Sync back to localStorage for consistency
+        localStorage.setItem('disclaimerConsent', sessionConsent);
+        localStorage.setItem('disclaimerTimestamp', sessionTimestamp);
+        return false; // Don't show the popup
+      }
+    }
+    
+    return true; // Show the disclaimer
+  }
+  
+  // Store consent with separate timestamp
+  function storeConsent(status) {
+    const timestamp = new Date().getTime();
+    
+    // Store as separate entries for better stability
+    localStorage.setItem('disclaimerConsent', status);
+    localStorage.setItem('disclaimerTimestamp', timestamp.toString());
+    
+    // Also store in session storage
+    sessionStorage.setItem('disclaimerConsent', status);
+    sessionStorage.setItem('disclaimerTimestamp', timestamp.toString());
+  }
+  
+  // Check if popup should be shown
+  if (shouldShowDisclaimer()) {
+    disclaimerPopup.classList.remove('hidden');
+  } else {
+    disclaimerPopup.classList.add('hidden');
+  }
+  
+  // Event listener for "I Consent" button
+  document.getElementById('consent-btn').addEventListener('click', function() {
+    storeConsent('accepted');
+    disclaimerPopup.classList.add('hidden');
+  });
+  
+  // Event listener for "I Decline" button
+  document.getElementById('decline-btn').addEventListener('click', function() {
+    storeConsent('declined');
+    disclaimerPopup.classList.add('hidden');
+    // Optionally redirect or show a message if they decline
+  });
+});
+</script>
+
+<style>
+  .disclaimer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+  }
+
+  .disclaimer-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .disclaimer-container h2 {
+    color: #0033a0;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .disclaimer-container p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  .disclaimer-container a {
+    color: #0033a0;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .disclaimer-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+
+  .disclaimer-buttons button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  #decline-btn {
+    background-color: #e6e6e6;
+    color: #333;
+  }
+
+  #consent-btn {
+    background-color: #f2f2f2;
+    color: #333;
+    float: right;
+  }
+
+  #decline-btn:hover {
+    background-color: #d9d9d9;
+  }
+
+  #consent-btn:hover {
+    background-color: #e6e6e6;
+  }
+
+  @media (max-width: 600px) {
+    .disclaimer-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .disclaimer-buttons button {
+      width: 100%;
+    }
+  }
+
+  .hidden {
+    display: none !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if user has already made a choice
+    if (!localStorage.getItem('disclaimerConsent')) {
+      document.getElementById('disclaimer-popup').classList.remove('hidden');
+    } else {
+      document.getElementById('disclaimer-popup').classList.add('hidden');
+    }
+    
+    // Event listener for "I Consent" button
+    document.getElementById('consent-btn').addEventListener('click', function() {
+      localStorage.setItem('disclaimerConsent', 'accepted');
+      document.getElementById('disclaimer-popup').classList.add('hidden');
+    });
+    
+    // Event listener for "I Decline" button
+    document.getElementById('decline-btn').addEventListener('click', function() {
+      localStorage.setItem('disclaimerConsent', 'declined');
+      document.getElementById('disclaimer-popup').classList.add('hidden');
+      // Optionally redirect or show a message if they decline
+    });
+  });
+</script>
     <div id="layout" class="clr layout_">
       <div class="inner_layout header_onthe_cover">
         <div class="cz_overlay" aria-hidden="true"></div>
@@ -2891,9 +3201,10 @@
                         ><img
                           src="./wp-content/uploads/sites/15/2024/10/logo.png"
                           data-czlz
-                          alt="Sky Legal 4"
-                          width="150"
-                          height="39"
+                          alt="Sky Legal Corporate
+Consultants Private Limited 4"
+                          width="250"
+                          height="auto"
                       /></a>
                     </div>
                   </div>
@@ -2947,7 +3258,8 @@
                         ><img
                           src="./wp-content/uploads/sites/15/2024/10/logo.png"  
                           data-czlz
-                          alt="Sky Legal 4"
+                          alt="Sky Legal Corporate
+Consultants Private Limited 4"
                           width="122"
                           height="38"
                       /></a>
@@ -2991,8 +3303,12 @@
                   Legal Solutions.
                 </h1>
                 <p>Expert legal solutions tailored to your unique needs.</p>
-                <a href="tel:+1550721776" class="hero-button">
-                  Call: +91 880 090 7001
+               
+                <a href="tel:+8743000838" class="hero-button hero-button-outline" style="margin-right: 10px;">
+                  Call: +91 874 300 0838
+                </a>
+                <a href="tel:+9891000835" class="hero-button" >
+                  Call: +91 989 100 0835
                 </a>
                 <hr style="margin-top: 50px" />
                 <div class="hero-features">
@@ -3003,11 +3319,10 @@
               </div>
               <div class="hero-image">
                 <img
-                  src="./img/img-slide1.png"
+                  src="https://www.cowanhilgemanlaw.com/wp-content/uploads/2025/02/Personal-Injury-Lawyer-Dayton-OH.jpg"
                   alt="Hero Image"
-                  style="margin-left: 120px"
                 />
-                <img src="./img/img-slide2.png" alt="" />
+                <!-- <img src="./img/img-slide2.png" alt="" /> -->
               </div>
             </div>
           </div>
@@ -3025,17 +3340,14 @@
 
             .hero-image {
               position: relative;
-              width: 100%;
-              height: 100%;
-              display: flex;
+              width: 40%;
             }
 
             .hero-image img {
               width: 100%;
-              height: 85%;
               object-fit: contain;
-              position: absolute;
-              bottom: 0;
+              border-radius: 12px ;
+             
             }
 
             .hero-slide {
@@ -3093,6 +3405,11 @@
               margin-top: 1rem;
               border: 2px solid #ceaf7c;
             }
+            .hero-button-outline{
+              background-color: transparent;
+              color: #ceaf7c;
+              border: 2px solid #ceaf7c;
+            }
             .hero-button:hover {
               background-color: #1d212c;
               color: #ceaf7c;
@@ -3131,9 +3448,20 @@
                 flex-direction: column;
                 align-items: center;                
               }
-              .hero-image img{
-                left: -20%;
-              }
+              .hero-image {
+                position: relative;
+        width: 90%;
+        margin: auto;
+        margin-left: 0;
+            }
+
+            .hero-image img {
+              width: 100%;
+              object-fit: contain;
+              border-radius: 12px ;
+             
+            }
+
               .hero-features span{
                 font-size:10px;
                 padding: 5px 8px;
@@ -3292,8 +3620,10 @@
                                       data-czlz
                                       data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/title.png"
                                       class="attachment-full size-full wp-image-1340"
-                                      alt="Sky Legal 4 92"
-                                      title="Sky Legal 4 92"
+                                      alt="Sky Legal Corporate
+Consultants Private Limited 4 92"
+                                      title="Sky Legal Corporate
+Consultants Private Limited 4 92"
                                     />
                                   </div>
                                   <div class="cz_hover_image">
@@ -3305,8 +3635,10 @@
                                       data-czlz
                                       data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/title.png"
                                       class="attachment-full size-full wp-image-1340"
-                                      alt="Sky Legal 4 92"
-                                      title="Sky Legal 4 92"
+                                      alt="Sky Legal Corporate
+Consultants Private Limited 4 92"
+                                      title="Sky Legal Corporate
+Consultants Private Limited 4 92"
                                     />
                                   </div>
                                 </div>
@@ -3819,7 +4151,8 @@
                                                       data-src="https://themetor.com/thelaw-4/wp-content/uploads/sites/12/2024/11/quote.png"
                                                       alt="quote"
                                                     />
-                                                    The team at Sky Legal firm
+                                                    The team at Sky Legal Corporate
+Consultants Private Limited firm
                                                     provided exceptional legal
                                                     guidance. Their expertise
                                                     and dedication were evident
@@ -3845,29 +4178,14 @@
                                                 </div>
                                               </div>
                                               <div class="cz_testimonials_meta">
-                                                <div
-                                                  class="cz_testimonials_avatar"
-                                                >
-                                                  <img
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                    width="80"
-                                                    height="80"
-                                                    src="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20width=&#39;80&#39;%20height=&#39;80&#39;%20viewBox%3D&#39;0%200%2080%2080&#39;%2F%3E"
-                                                    data-czlz
-                                                    data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2019/03/q2.jpg"
-                                                    class="attachment-large size-large wp-image-867"
-                                                    alt="Sky Legal 4 39"
-                                                    title="Sky Legal 4 39"
-                                                  />
-                                                </div>
+                                              
                                                 <div
                                                   class="cz_testimonials_name_subname"
                                                 >
                                                   <div
                                                     class="cz_testimonials_name"
                                                   >
-                                                    Mark Brown
+                                                    Vivek Kumar
                                                   </div>
                                                   <div
                                                     class="cz_testimonials_subname"
@@ -3968,7 +4286,8 @@
                                                       data-src="https://themetor.com/thelaw-4/wp-content/uploads/sites/12/2024/11/quote.png"
                                                       alt="quote"
                                                     />
-                                                    Working with Sky Legal was a
+                                                    Working with Sky Legal Corporate
+Consultants Private Limited was a
                                                     game-changer. Their
                                                     professionalism and
                                                     attention to detail ensured
@@ -3994,29 +4313,14 @@
                                                 </div>
                                               </div>
                                               <div class="cz_testimonials_meta">
-                                                <div
-                                                  class="cz_testimonials_avatar"
-                                                >
-                                                  <img
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                    width="80"
-                                                    height="80"
-                                                    src="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20width=&#39;80&#39;%20height=&#39;80&#39;%20viewBox%3D&#39;0%200%2080%2080&#39;%2F%3E"
-                                                    data-czlz
-                                                    data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2019/03/q8.jpg"
-                                                    class="attachment-large size-large wp-image-865"
-                                                    alt="Sky Legal 4 37"
-                                                    title="Sky Legal 4 37"
-                                                  />
-                                                </div>
+                                                
                                                 <div
                                                   class="cz_testimonials_name_subname"
                                                 >
                                                   <div
                                                     class="cz_testimonials_name"
                                                   >
-                                                    Catrina Mk.
+                                                    Shreya Gupta.
                                                   </div>
                                                   <div
                                                     class="cz_testimonials_subname"
@@ -4119,7 +4423,8 @@
                                                     />
                                                     I was impressed by the
                                                     compassion and expertise
-                                                    shown by Sky Legal. They
+                                                    shown by Sky Legal Corporate
+Consultants Private Limited. They
                                                     truly listened to my
                                                     concerns and fought
                                                     diligently for my rights.
@@ -4143,7 +4448,7 @@
                                                 </div>
                                               </div>
                                               <div class="cz_testimonials_meta">
-                                                <div
+                                                <!-- <div
                                                   class="cz_testimonials_avatar"
                                                 >
                                                   <img
@@ -4155,17 +4460,19 @@
                                                     data-czlz
                                                     data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2019/03/q3.jpg"
                                                     class="attachment-large size-large wp-image-863"
-                                                    alt="Sky Legal 4 49"
-                                                    title="Sky Legal 4 49"
+                                                    alt="Sky Legal Corporate
+Consultants Private Limited 4 49"
+                                                    title="Sky Legal Corporate
+Consultants Private Limited 4 49"
                                                   />
-                                                </div>
+                                                </div> -->
                                                 <div
                                                   class="cz_testimonials_name_subname"
                                                 >
                                                   <div
                                                     class="cz_testimonials_name"
                                                   >
-                                                    Mark Brown
+                                                    Anjali Sharma
                                                   </div>
                                                   <div
                                                     class="cz_testimonials_subname"
@@ -4246,7 +4553,8 @@
                                   <div class="cz_title_content">
                                     <div class="cz_wpe_content">
                                       <p>
-                                        At Sky Legal Corporate Consultants, we are proud to be a leading corporate legal consulting company with a strong presence in both India and abroad. Over the years, we have not only built a solid reputation but also significantly expanded our operations and client base globally.
+                                        At Sky Legal Corporate
+Consultants Private Limited , we are proud to be a leading corporate legal consulting company with a strong presence in both India and abroad. Over the years, we have not only built a solid reputation but also significantly expanded our operations and client base globally.
                                       </p>
                                       <br>
                                       <p>
@@ -4254,7 +4562,8 @@
                                       </p>
                                       <br>
                                       <p>
-                                        At Sky Legal, we deliver complete corporate legal solutions that are tailored to meet diverse business needs. Our approach emphasizes flexibility, speed, and efficiency, ensuring the best return on investment. From legal structuring and compliance to implementation and support, we take full ownership with a commitment to quality and excellence.
+                                        At Sky Legal Corporate
+Consultants Private Limited, we deliver complete corporate legal solutions that are tailored to meet diverse business needs. Our approach emphasizes flexibility, speed, and efficiency, ensuring the best return on investment. From legal structuring and compliance to implementation and support, we take full ownership with a commitment to quality and excellence.
                                       </p>
                                       
                                     </div>
@@ -4313,8 +4622,10 @@
                                       data-czlz
                                       data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/img2.jpg"
                                       class="attachment-full size-full wp-image-1367"
-                                      alt="Sky Legal 4 5"
-                                      title="Sky Legal 4 5"
+                                      alt="Sky Legal Corporate
+Consultants Private Limited 4 5"
+                                      title="Sky Legal Corporate
+Consultants Private Limited 4 5"
                                       data-srcset="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/img2.jpg 550w, https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/img2-242x300.jpg 242w"
                                       data-sizes="(max-width: 550px) 100vw, 550px"
                                     />
@@ -4329,8 +4640,10 @@
                                       data-czlz
                                       data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/img2.jpg"
                                       class="attachment-full size-full wp-image-1367"
-                                      alt="Sky Legal 4 5"
-                                      title="Sky Legal 4 5"
+                                      alt="Sky Legal Corporate
+Consultants Private Limited 4 5"
+                                      title="Sky Legal Corporate
+Consultants Private Limited 4 5"
                                       data-srcset="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/img2.jpg 550w, https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/img2-242x300.jpg 242w"
                                       data-sizes="(max-width: 550px) 100vw, 550px"
                                     />
@@ -4409,7 +4722,8 @@
                               <div class="cz_title_content">
                                 <div class="cz_wpe_content">
                                   <p style="text-align: center">
-                                    Meet the dedicated professionals behind Sky Legal
+                                    Meet the dedicated professionals behind Sky Legal Corporate
+Consultants Private Limited
                                   </p>
                                 </div>
                               </div>
@@ -4507,7 +4821,7 @@
                 
                             <div class="team-card">
                                 <h3 class="team-member-name">Raghuvender</h3>
-                                <p class="team-member-position">Associate Member ICSI</p>
+                                <p class="team-member-position">Senior Associate CS, LLB, LLM</p>
                                 <p class="team-member-bio">Over 10 years of experience in corporate law and compliance management. Expert in Rights Issues, Bonus Issues, Preferential Allotments, ESOP management, FDI, Takeovers, M&A, and Due Diligence.</p>
                             </div>
                 
@@ -4522,13 +4836,13 @@
                         <div class="team-row">
                             <div class="team-card">
                                 <h3 class="team-member-name">Rupesh Sharma</h3>
-                                <p class="team-member-position">B.Com CS, LLB</p>
+                                <p class="team-member-position">Associate</p>
                                 <p class="team-member-bio">2+ years of experience in Corporate litigation, FEMA compliance, and Advocacy. Member of Bar Council of Haryana specializing in Real Estate and Arbitration disputes.</p>
                             </div>
                 
                             <div class="team-card">
                                 <h3 class="team-member-name">Saransh Sharma</h3>
-                                <p class="team-member-position">B.Com, CS</p>
+                                <p class="team-member-position">Associate</p>
                                 <p class="team-member-bio">2+ years of experience leading projects in corporate litigation, FEMA, Secretarial Audit, and SEBI/RBI matters. Currently managing the Head Office in Gurgaon.</p>
                             </div>
                         </div>
@@ -4595,8 +4909,10 @@
                                           data-czlz
                                           data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/img4.png"
                                           class="attachment-full size-full wp-image-1394"
-                                          alt="Sky Legal 4 31"
-                                          title="Sky Legal 4 31"
+                                          alt="Sky Legal Corporate
+Consultants Private Limited 4 31"
+                                          title="Sky Legal Corporate
+Consultants Private Limited 4 31"
                                         />
                                       </div>
                                       <div class="cz_hover_image">
@@ -4609,8 +4925,10 @@
                                           data-czlz
                                           data-src="https://themetor.com/elementor/thelaw-4/wp-content/uploads/sites/15/2024/11/img4.png"
                                           class="attachment-full size-full wp-image-1394"
-                                          alt="Sky Legal 4 31"
-                                          title="Sky Legal 4 31"
+                                          alt="Sky Legal Corporate
+Consultants Private Limited 4 31"
+                                          title="Sky Legal Corporate
+Consultants Private Limited 4 31"
                                         />
                                       </div>
                                     </div>
@@ -4895,7 +5213,8 @@
                       class="codevz-widget-about-content mb30"
                       data-cz-style=".codevz-widget-737 .codevz-widget-about-logo {width:210px;}.codevz-widget-737 .codevz-widget-about-content {color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:30px;}"
                     >
-                    Sky Legal Corporate Consultants delivers complete corporate legal solutions with expert precision, global reach, and a client-first approach.
+                    Sky Legal Corporate
+Consultants Private  delivers complete corporate legal solutions with expert precision, global reach, and a client-first approach.
                     </div>
                     <!-- <div
                       id="cz7401"
@@ -5066,7 +5385,8 @@
                             font-size: 13px;
                             color: rgba(255, 255, 255, 0.4);
                           "
-                          >Copyright 2025 Sky Legal. All Rights
+                          >Copyright 2025 Sky Legal Corporate
+Consultants Private Limited. All Rights
                           Reserved.</span>
                         
                       </div>
