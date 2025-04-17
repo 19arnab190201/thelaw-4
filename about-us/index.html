@@ -2726,7 +2726,7 @@
                       <a href="/" title=""
                         ><img
                           src="../wp-content/uploads/sites/15/2024/10/logo.png"
-                          data-czlz
+                          data-czlz=""
                           alt="sky legal 4"
                           width="200"
                           height="39"
@@ -2742,15 +2742,15 @@
                   >
                     <i
                       class="fa fa-bars hide icon_mobile_cz_menu_default cz_mi_76895"
-                      style=""
                       aria-label="Menu"
                       ><span></span
                     ></i>
                     <ul
                       id="menu_header_2"
-                      class="sf-menu clr cz_menu_default"
+                      class="sf-menu clr cz_menu_default sf-js-enabled sf-arrows"
                       data-indicator="fas fa-angle-down"
                       data-indicator2="fas fa-angle-right"
+                      style="touch-action: pan-y"
                     >
                       <li
                         id="menu-header_2-1667"
@@ -2761,7 +2761,7 @@
                       </li>
                       <li
                         id="menu-header_2-1669"
-                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item cz current_menu current_menu"
+                        class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-6 cz current_menu current_menu"
                         data-sub-menu=""
                       >
                         <a href="/about-us/" data-title="About Us"
@@ -2777,8 +2777,53 @@
                           ><span>Practice Areas</span></a
                         >
                       </li>
+
+                      <!-- New Sectors Menu with Submenu -->
                       <li
-                        id="menu-header_2-1675"
+                        id="menu-header_2-sectors"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children cz dropdown"
+                        data-sub-menu=""
+                      >
+                        <a
+                          href="/sectors.html"
+                          data-title="Sectors"
+                          class="sf-with-ul dropdown-toggle"
+                          ><span>Sectors</span>
+                        </a>
+                        <ul class="sub-menu dropdown-menu">
+                          <li id="menu-header_2-startups" class="menu-item">
+                            <a
+                              href="/sectors.html#startups"
+                              data-title="Startups"
+                              ><span>Startups</span></a
+                            >
+                          </li>
+                          <li id="menu-header_2-realestate" class="menu-item">
+                            <a
+                              href="/sectors.html#realestate"
+                              data-title="Real Estate"
+                              ><span>Real Estate</span></a
+                            >
+                          </li>
+                          <li id="menu-header_2-banking" class="menu-item">
+                            <a
+                              href="/sectors.html#banking"
+                              data-title="Banking and Financial Services"
+                              ><span>Banking and Financial Services</span></a
+                            >
+                          </li>
+                          <li id="menu-header_2-corporate" class="menu-item">
+                            <a
+                              href="/sectors.html#corporate"
+                              data-title="Corporate Governance"
+                              ><span>Corporate Governance</span></a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li
+                        id="menu-header_2-1674"
                         class="menu-item menu-item-type-post_type menu-item-object-page cz"
                         data-sub-menu=""
                       >
@@ -2787,13 +2832,30 @@
                         >
                       </li>
                       <li
-                        id="menu-header_2-1676"
-                        class="menu-item menu-item-type-post_type menu-item-object-page cz"
+                        id="menu-header_2-1674"
+                        class="menu-item menu-item-type-post_type menu-item-object-page cz cz-last-child"
                         data-sub-menu=""
                       >
                         <a href="/our-clients.html" data-title="Our Clients"
                           ><span>Our Clients</span></a
                         >
+                      </li>
+                      <li class="cz-extra-menus cz" style="display: none">
+                        <a
+                          href="#"
+                          class="sf-with-ul"
+                          aria-label="More links"
+                          aria-hidden="true"
+                          ><span
+                            >&nbsp;<i
+                              class="fa czico-055-three cz-extra-menus"
+                              style="margin: 0px; display: none"
+                              aria-hidden="true"
+                            ></i
+                            >&nbsp;</span
+                          ></a
+                        >
+                        <ul class="sub-menu" aria-hidden="true"></ul>
                       </li>
                     </ul>
                     <i
@@ -2801,6 +2863,7 @@
                       aria-label="Close"
                     ></i>
                   </div>
+                  <div class="cz_elm">&nbsp;</div>
                 </div>
               </div>
             </div>
@@ -2847,16 +2910,46 @@
                 >
               </li>
               <li>
-                <a href="/practice-areas/"
+                <a href="/practice-areas"
                   ><i class="fas fa-balance-scale"></i> Practice Areas</a
                 >
+              </li>
+              <!-- New Sectors Menu with Submenu for Mobile -->
+              <li class="has-submenu">
+                <a href="#" class="submenu-toggle"
+                  ><i class="fas fa-industry"></i> Sectors
+                  <i class="fas fa-chevron-down submenu-icon"></i
+                ></a>
+                <ul class="submenu">
+                  <li>
+                    <a href="/sectors.html#startups"
+                      ><i class="fas fa-rocket"></i> Startups</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/sectors.html#realestate"
+                      ><i class="fas fa-building"></i> Real Estate</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/sectors.html#banking"
+                      ><i class="fas fa-university"></i> Banking and Financial
+                      Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/sectors.html#corporate"
+                      ><i class="fas fa-briefcase"></i> Corporate Governance</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="/team.html"><i class="fas fa-users"></i> Our Team</a>
               </li>
               <li>
                 <a href="/our-clients.html"
-                  ><i class="fas fa-users"></i> Our Clients</a
+                  ><i class="fas fa-handshake"></i> Our Clients</a
                 >
               </li>
             </ul>
@@ -2870,6 +2963,50 @@
             /* Font Awesome CDN - add this in your head section if not already included */
             @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
+            /* Desktop Dropdown Menu Styles */
+            .dropdown-menu {
+              display: none;
+              position: absolute;
+              background-color: #fff;
+              min-width: 250px;
+              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+              z-index: 1000;
+              padding: 0;
+              border-radius: 4px;
+              border-top: 3px solid #0066cc;
+            }
+
+            .dropdown-menu li {
+              padding: 0;
+              margin: 0;
+              display: block;
+              width: 100%;
+            }
+
+            .dropdown-menu li a {
+              padding: 12px 20px;
+              display: block;
+              color: #333;
+              text-decoration: none;
+              border-bottom: 1px solid #eee;
+              transition: all 0.3s ease;
+            }
+
+            .dropdown-menu li a:hover {
+              background-color: #f8f9fa;
+              color: #0066cc;
+            }
+
+            .dropdown:hover .dropdown-menu {
+              display: block;
+            }
+
+            .dropdown-toggle .fa-angle-down {
+              margin-left: 5px;
+              font-size: 12px;
+            }
+
+            /* Mobile Menu Styles */
             .menu-toggle {
               display: block;
               color: #333;
@@ -2889,6 +3026,7 @@
               transition: right 0.3s ease;
               z-index: 100;
               padding-top: 80px;
+              overflow-y: auto;
             }
 
             .nav-menu.active {
@@ -2902,22 +3040,57 @@
             }
 
             .nav-menu li {
-              padding: 20px;
+              padding: 0;
               border-bottom: 1px solid #444;
             }
 
-            .nav-menu a {
+            .nav-menu li a {
               color: #fff;
               text-decoration: none;
               font-size: 18px;
               display: flex;
               align-items: center;
+              padding: 20px;
+              justify-content: space-between;
             }
 
-            .nav-menu a i {
+            .nav-menu a i:not(.submenu-icon) {
               margin-right: 15px;
               width: 20px;
               text-align: center;
+            }
+
+            /* Submenu styles for mobile */
+            .nav-menu .submenu {
+              display: none;
+              background-color: #444;
+              padding: 0;
+            }
+
+            .nav-menu .submenu li {
+              border-bottom: 1px solid #555;
+            }
+
+            .nav-menu .submenu li:last-child {
+              border-bottom: none;
+            }
+
+            .nav-menu .submenu a {
+              padding: 15px 20px 15px 40px;
+              font-size: 16px;
+            }
+
+            .submenu-toggle {
+              cursor: pointer;
+              width: 100%;
+            }
+
+            .submenu-icon {
+              transition: transform 0.3s ease;
+            }
+
+            .has-submenu.active .submenu-icon {
+              transform: rotate(180deg);
             }
 
             .overlay {
@@ -2934,6 +3107,12 @@
             .overlay.active {
               display: block;
             }
+
+            @media (max-width: 768px) {
+              .header_2 {
+                display: none;
+              }
+            }
           </style>
 
           <!-- Add this JavaScript code -->
@@ -2943,15 +3122,18 @@
               const navMenu = document.getElementById("nav-menu");
               const overlay = document.getElementById("overlay");
 
+              // Mobile menu toggle
               menuToggle.addEventListener("click", function () {
                 navMenu.classList.toggle("active");
                 overlay.classList.toggle("active");
 
                 // Change hamburger icon to X when menu is open
                 if (navMenu.classList.contains("active")) {
-                  menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+                  menuToggle.innerHTML =
+                    '<i class="fas fa-times" style="color: #fff;"></i>';
                 } else {
-                  menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                  menuToggle.innerHTML =
+                    '<i class="fas fa-bars" style="color: #fff;"></i>';
                 }
               });
 
@@ -2959,8 +3141,47 @@
               overlay.addEventListener("click", function () {
                 navMenu.classList.remove("active");
                 overlay.classList.remove("active");
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                menuToggle.innerHTML =
+                  '<i class="fas fa-bars" style="color: #fff;"></i>';
               });
+
+              // Toggle submenu on mobile
+              const submenuToggles =
+                document.querySelectorAll(".submenu-toggle");
+              submenuToggles.forEach((toggle) => {
+                toggle.addEventListener("click", function (e) {
+                  e.preventDefault();
+                  const parentLi = this.closest(".has-submenu");
+                  parentLi.classList.toggle("active");
+
+                  const submenu = parentLi.querySelector(".submenu");
+                  if (submenu.style.display === "block") {
+                    submenu.style.display = "none";
+                  } else {
+                    submenu.style.display = "block";
+                  }
+                });
+              });
+
+              // Desktop dropdown enhancement
+              if (window.innerWidth > 768) {
+                const dropdowns = document.querySelectorAll(".dropdown");
+                dropdowns.forEach((dropdown) => {
+                  dropdown.addEventListener("mouseenter", function () {
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu) {
+                      menu.style.display = "block";
+                    }
+                  });
+
+                  dropdown.addEventListener("mouseleave", function () {
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu) {
+                      menu.style.display = "none";
+                    }
+                  });
+                });
+              }
             });
           </script>
         </header>
@@ -4499,9 +4720,9 @@
                       class="codevz-widget-about-content mb30"
                       data-cz-style=".codevz-widget-737 .codevz-widget-about-logo {width:210px;}.codevz-widget-737 .codevz-widget-about-content {color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:30px;}"
                     >
-                      Sky Legal Corporate Consultants Private delivers complete
-                      corporate legal solutions with expert precision, global
-                      reach, and a client-first approach.
+                      At Sky Legal Corporate Consultants, we provide end-to-end
+                      corporate legal solutions—driven by expertise, guided by
+                      global insight, and centered on our clients.
                     </div>
                     <!-- <div
                       id="cz7401"
@@ -4646,13 +4867,13 @@
                   <div class="codevz-widget-content clr">
                     <div class="clr">
                       <div class="">
-                        <strong>Mission:</strong> Providing smart, reliable
-                        corporate legal solutions for business growth.
+                        <strong>Mission:</strong> Offering reliable corporate
+                        legal services tailored for business success.
                       </div>
                       <br />
                       <div class="">
-                        <strong>Vision:</strong> To be a trusted name in global
-                        corporate legal consulting.
+                        <strong>Vision:</strong> Empowering businesses globally
+                        through trusted corporate legal expertise.
                       </div>
                     </div>
                   </div>
