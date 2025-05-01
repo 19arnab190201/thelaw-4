@@ -34723,8 +34723,7 @@ i.cz_acc_close_icon {
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(/elementor/wp-content/plugins/codevz-plus/admin/assets/css/font-awesome/webfonts/fa-solid-900.woff2)
-      format("woff2"),
+  src: url() format("woff2"),
     url(/elementor/wp-content/plugins/codevz-plus/admin/assets/css/font-awesome/webfonts/fa-solid-900.ttf)
       format("truetype");
 }
@@ -34747,8 +34746,7 @@ i.cz_acc_close_icon {
   font-family: "Font Awesome 5 Free";
   font-display: block;
   font-weight: 900;
-  src: url(/elementor/wp-content/plugins/codevz-plus/admin/assets/css/font-awesome/webfonts/fa-solid-900.woff2)
-      format("woff2"),
+  src: url() format("woff2"),
     url(/elementor/wp-content/plugins/codevz-plus/admin/assets/css/font-awesome/webfonts/fa-solid-900.ttf)
       format("truetype");
 }
@@ -34766,8 +34764,7 @@ i.cz_acc_close_icon {
   font-display: swap;
   font-family: "FontAwesome";
   font-display: block;
-  src: url(/elementor/wp-content/plugins/codevz-plus/admin/assets/css/font-awesome/webfonts/fa-solid-900.woff2)
-      format("woff2"),
+  src: url() format("woff2"),
     url(/elementor/wp-content/plugins/codevz-plus/admin/assets/css/font-awesome/webfonts/fa-solid-900.ttf)
       format("truetype");
 }
